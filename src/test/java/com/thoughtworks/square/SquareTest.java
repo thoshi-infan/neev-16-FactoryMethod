@@ -10,6 +10,7 @@ public class SquareTest {
 
     @Test
     public void shouldReturnAreaWhenSideIsGiven(){
+
         Square square = new Square(2);
 
         int result = square.area();
@@ -17,15 +18,28 @@ public class SquareTest {
         assertThat(result, is(4));
     }
 
-    @Test
-    public void shouldReturnAreaIsOneWhenSideIsGivenAsOne(){
 
-        Square square = new Square(1);
+    @Test
+    public void shouldReturnAreaIsZeroWhenSideIsGivenAsZero(){
+
+        Square square = new Square(0);
 
         int result = square.area();
 
-        assertThat(result, is(1));
+        assertThat(result, is(0));
     }
+
+    @Test
+    public void shouldReturnAreaAsZeroWhenSideIsGivenAsNegative(){
+
+        Square square = new Square(-5);
+
+        int result = square.area();
+
+        assertThat(result, is(0));
+    }
+
+
 
 
 

@@ -8,6 +8,7 @@ public class Square {
     }
 
     public int area() {
+        if(side <= 0) return 0;
         return side * side;
     }
 }
