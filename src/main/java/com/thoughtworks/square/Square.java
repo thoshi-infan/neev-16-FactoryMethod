@@ -2,12 +2,12 @@ package com.thoughtworks.square;
 
 public class Square {
 
-    private final int side;
-    public Square(int side) {
+    private final double side;
+    public Square(double side) {
         this.side = side;
     }
 
-    public int area() {
+    public double area() {
         if(side <= 0) return 0;
         return side * side;
     }

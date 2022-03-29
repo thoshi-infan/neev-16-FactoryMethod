@@ -13,9 +13,9 @@ public class SquareTest {
 
         Square square = new Square(2);
 
-        int result = square.area();
+        double result = square.area();
 
-        assertThat(result, is(4));
+        assertThat(result, closeTo(4, 0.1));
     }
 
 
@@ -24,9 +24,9 @@ public class SquareTest {
 
         Square square = new Square(0);
 
-        int result = square.area();
+        double result = square.area();
 
-        assertThat(result, is(0));
+        assertThat(result, closeTo(0, 0.1));
     }
 
     @Test
@@ -34,9 +34,20 @@ public class SquareTest {
 
         Square square = new Square(-5);
 
-        int result = square.area();
+        double result = square.area();
 
-        assertThat(result, is(0));
+        assertThat(result, closeTo(0, 0.1));
+
+    }
+
+    @Test
+    public void shouldReturnAreaWhenSideIsGivenAsDecimal(){
+
+        Square square = new Square(5.5);
+
+        double result = square.area();
+
+        assertThat(result, closeTo(30.25, 0.1));
     }
 
 
