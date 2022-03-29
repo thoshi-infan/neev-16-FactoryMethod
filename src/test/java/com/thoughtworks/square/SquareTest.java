@@ -11,11 +11,11 @@ public class SquareTest {
     @Test
     public void shouldReturnAreaWhenSideIsGiven(){
 
-        Square square = new Square(2);
+        Square square = new Square(20);
 
         double result = square.area();
 
-        assertThat(result, closeTo(4, 0.1));
+        assertThat(result, closeTo(400, 0.1));
     }
 
 
@@ -48,9 +48,29 @@ public class SquareTest {
         double result = square.area();
 
         assertThat(result, closeTo(30.25, 0.1));
+
+    }
+
+    @Test
+    public void shouldReturnPerimeterWhenSideIsGiven(){
+
+        Square square = new Square(20);
+
+        double result = square.perimeter();
+
+        assertThat(result, closeTo(80, 0.1));
     }
 
 
+    @Test
+    public void shouldReturnPerimeterIsZeroWhenSideIsGivenAsZero(){
+
+        Square square = new Square(0);
+
+        double result = square.perimeter();
+
+        assertThat(result, closeTo(0, 0.1));
+    }
 
 
 

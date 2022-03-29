@@ -3,6 +3,8 @@ package com.thoughtworks.square;
 public class Square {
 
     private final double side;
+    private final int perimeterValue = 4;
+
     public Square(double side) {
         this.side = side;
     }
@@ -11,4 +13,10 @@ public class Square {
         if(side <= 0) return 0;
         return side * side;
     }
+
+    public double perimeter() {
+        if(side <= 0) return 0;
+        return  perimeterValue * side;
+    }
+
 }
